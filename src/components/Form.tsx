@@ -1,7 +1,61 @@
-// import { useState } from "react"
+import { useRef } from "react";
 import style from "./index.module.css";
 
 function Form() {
+  const company = useRef<HTMLInputElement>(null);
+  const email = useRef<HTMLInputElement>(null);
+  const tel = useRef<HTMLInputElement>(null);
+  const country = useRef<HTMLInputElement>(null);
+  const city = useRef<HTMLInputElement>(null);
+  const addres = useRef<HTMLInputElement>(null);
+  const num = useRef<HTMLInputElement>(null);
+
+  function validate(
+    company: string,
+    email: string,
+    tel: string,
+    country: string,
+    city: string,
+    address: string,
+    num: number
+  ) {
+    if (!company || !company.trim()) {
+      alert("Company name is required");
+      return false
+    }
+    if (!email || !email.trim()) {
+      alert("Email is required");
+      return false
+    }
+    if (!tel || !tel.trim()) {
+      alert("Telephone number is required");
+      return false
+    }
+    if (!country || !country.trim()) {
+      alert("Countr is required");
+      return false
+    }
+    if (!city || !city.trim()) {
+      alert("City is required");
+      return false
+    }
+    if (!address || !address.trim()) {
+      alert("Adress is required");
+      return false
+    }
+    if (!num) {
+      alert("Num is required");
+      return false
+    }
+
+    return true
+  }
+  function heandleClick(){
+    if(validate(company.current?.value || '', email.current?.value || '', tel.current?.value || '', country.current?.value || '', city.current?.value || '', addres.current?.value || '', parseFloat(num.current?.value || ""))){
+        alert("Sucsesfuly")
+    }
+  }
+
   return (
     <div className={style.form__wrapper}>
       <div className={style.form__heading}>
@@ -22,7 +76,7 @@ function Form() {
             <p>
               Kompaniya nomi <span>*</span>
             </p>
-            <input type="text" placeholder="Kompaniya nomi" />
+            <input ref={company} type="text" placeholder="Kompaniya nomi" />
           </label>
         </div>
         <div className={style.email}>
@@ -30,7 +84,7 @@ function Form() {
             <p>
               Email <span>*</span>
             </p>
-            <input type="email" placeholder="Email" />
+            <input ref={email} type="email" placeholder="Email" />
           </label>
         </div>
         <div className={style.tel}>
@@ -38,7 +92,7 @@ function Form() {
             <p>
               Telefon raqami <span>*</span>
             </p>
-            <input type="text" placeholder="UZ +9989" />
+            <input ref={tel} type="text" placeholder="UZ +9989" />
           </label>
         </div>
         <div className={style.links}>
@@ -145,7 +199,7 @@ function Form() {
               <p>
                 Davlat <span>*</span>
               </p>
-              <input type="text" placeholder="Davlat" />
+              <input ref={country} type="text" placeholder="Davlat" />
             </label>
           </div>
           <div className={style.city}>
@@ -153,7 +207,7 @@ function Form() {
               <p>
                 Shahar <span>*</span>
               </p>
-              <input type="text" placeholder="Shahar" />
+              <input ref={city} type="text" placeholder="Shahar" />
             </label>
           </div>
         </div>
@@ -162,7 +216,7 @@ function Form() {
             <p>
               Yashash joyi <span>*</span>
             </p>
-            <input type="text" placeholder="Joy" />
+            <input ref={addres} type="text" placeholder="Joy" />
           </label>
         </div>
         <div className={style.num}>
@@ -170,19 +224,21 @@ function Form() {
             <p>
               Hodimlar soni <span>*</span>
             </p>
-            <input type="text" placeholder="Hodimlar soni" />
+            <input ref={num} type="number" placeholder="Hodimlar soni" />
           </label>
         </div>
         <div className={style.desc}>
-            <label>
-                <p>Izoh <span>*</span></p>
-                <textarea placeholder="Kompaniya haqida izoh qoldiring"></textarea>
-            </label>
+          <label>
+            <p>
+              Izoh <span>*</span>
+            </p>
+            <textarea placeholder="Kompaniya haqida izoh qoldiring"></textarea>
+          </label>
         </div>
       </div>
       <div className={style.btns}>
         <button className={style.pervous}>ORTGA</button>
-        <button className={style.next}>KEYINGISI</button>
+        <button onClick={heandleClick} className={style.next}>KEYINGISI</button>
       </div>
     </div>
   );
