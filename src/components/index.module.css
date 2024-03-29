@@ -1,0 +1,131 @@
+.file_input_label {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: rgba(83, 97, 228, 1);
+  border: none;
+}
+
+.file__input {
+  display: none;
+}
+.form__wrapper {
+  width: 700px;
+  margin: 100px auto;
+  background-color: white;
+  border-radius: 24px;
+  padding: 32px 38px;
+}
+.form__heading h2 {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 41.6px;
+  text-align: left;
+  margin-bottom: 16px;
+}
+.form__heading p{
+color: rgba(179, 179, 179, 1);
+  font-size: 16px;
+font-weight: 450;
+line-height: 20.8px;
+text-align: left;
+}
+.form__heading{
+  margin-bottom: 32px;
+}
+.img__upload{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.form__inputs{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form__inputs label{
+  width: 100%;
+}
+.form__inputs label p{
+font-size: 14px;
+font-weight: 450;
+line-height: 17.71px;
+text-align: left;
+margin-bottom: 8px;
+}
+.form__inputs label p span{
+  color: red;
+}
+.form__inputs input{
+  outline: none;
+  border-radius: 16px;
+  width: 100%;
+  padding: 18px;
+  color: gray;
+  border: 1px solid rgba(227, 227, 227, 1)
+}
+ul{
+  list-style: none;
+  display: flex;
+  gap: 8px;
+}
+ul li{
+  border-radius: 16px;
+  padding: 18px;
+  border: 1px solid rgba(227, 227, 227, 1)
+}
+.colum{
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+.colum .country{
+  width: 100%;
+}
+.colum .city{
+  width: 100%;
+}
+.desc label textarea{
+  width: 100%;
+  resize: none;
+  outline: none;
+  padding: 18px;
+  border: 1px solid rgba(227, 227, 227, 1);
+  height: 174px;
+  border-radius: 16px;
+}
+.btns{
+  margin-top: 42px;
+  display: flex;
+  justify-content: space-between;
+}
+.btns .next{
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20.24px;
+  letter-spacing: 1px;
+  text-align: left;
+  padding: 20px;
+  width: 180px;
+  text-align: center;
+  border-radius: 16px;
+  border: none;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  background-color: rgba(83, 97, 228, 1);
+}
+.pervous{
+font-size: 16px;
+font-weight: 500;
+line-height: 20.24px;
+letter-spacing: 1px;
+text-align: left;
+padding: 20px;
+width: 180px;
+text-align: center;
+border-radius: 16px;
+border: none;
+color: gray;
+cursor: pointer;
+}
